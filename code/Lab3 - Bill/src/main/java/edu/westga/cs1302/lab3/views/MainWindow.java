@@ -32,6 +32,7 @@ public class MainWindow {
     	String name = this.name.getText();
     	String amount = this.amount.getText();
     	
+    	
     	if (name.isEmpty() || amount.isEmpty()) {
     		this.billDisplay.setText("Enter name & amount.");
     		return;
