@@ -17,5 +17,21 @@ public class BillCalculator {
 		}
 		return subtotal;
 	}
+	
+	public static double calculateTax(BillItem[] items) {
+		if (items == null) {
+			throw new IllegalArgumentException("Items array can't be null.");
+		}
+		for (BillItem item : items) {
+			if (item == null) {
+				throw new IllegalArgumentException("Item can't be null.");
+			}
+		}
+		double totalTax = 0.0;
+		for (BillItem item : items) {
+			totalTax += item.getAmount() * 0.1;
+		}
+		return totalTax;
+	}
 
 }
