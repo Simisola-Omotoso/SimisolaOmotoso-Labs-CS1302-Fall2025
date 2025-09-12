@@ -33,5 +33,21 @@ public class BillCalculator {
 		}
 		return totalTax;
 	}
+	
+	public static double calculateTip(BillItem[] items) {
+		if (items == null) {
+			throw new IllegalArgumentException("Items array can't be null.");
+		}
+		for (BillItem item : items) {
+			if (item == null) {
+				throw new IllegalArgumentException("Item can't be null.");
+			}
+		}
+		double totalTip = 0.0;
+		for (BillItem item : items) {
+			totalTip += item.getAmount() * 0.2;
+		}
+		return totalTip;
+	}
 
 }
