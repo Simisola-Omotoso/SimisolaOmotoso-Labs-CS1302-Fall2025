@@ -2,6 +2,7 @@ package edu.westga.cs1302.bill.view;
 
 import edu.westga.cs1302.bill.model.Bill;
 import edu.westga.cs1302.bill.model.BillItem;
+import edu.westga.cs1302.bill.model.BillCalculator;
 
 /** Supports displaying the information contained in a Bill.
  * 
@@ -21,19 +22,12 @@ public class BillView {
 	 */
 	public static String getText(Bill bill) {
 		String text = "ITEMS" + System.lineSeparator();
-		double subTotal = 0.0;
-		for (BillItem item : bill.getItems()) {
-			text += item.getName() + " - " + item.getAmount() + System.lineSeparator();
-			subTotal += item.getAmount();
-		}
 		
 		text += System.lineSeparator();
-		text += "SUBTOTAL - $" + subTotal + System.lineSeparator();
-		double tax = subTotal * Bill.TAX_RATE;
-		double tip = subTotal * Bill.TIP_RATE;
-		text += "TAX - $" + BillView.roundToNearestHundredth(tax) + System.lineSeparator();
-		text += "TIP - $" + BillView.roundToNearestHundredth(tip) + System.lineSeparator();
-		text += "TOTAL - $" + BillView.roundToNearestHundredth(subTotal + tip + tax);
+		text += "SUBTOTAL - $" + BillCalculator.calculateSubtotal(bill.getItems().toArray(new BillItem[0])) + System.lineSeparator();
+		text += "TAX - $" + BillView.roundToNearestHundredth(BillCalculator.calculateTax(bill.getItems().toArray(new BillItem[0]))) + System.lineSeparator();
+		text += "TIP - $" + BillView.roundToNearestHundredth(BillCalculator.calculateTip(bill.getItems().toArray(new BillItem[0]))) + System.lineSeparator();
+		text += "TOTAL - $" + BillView.roundToNearestHundredth(BillCalculator.calculateTotal(bill.getItems().toArray(new BillItem[0])));
 		
 		return text;
 	}
