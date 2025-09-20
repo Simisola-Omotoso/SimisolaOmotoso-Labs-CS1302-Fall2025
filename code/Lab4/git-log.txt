@@ -1,0 +1,136 @@
+commit 25e9824bba91f453406390297c11765899c7a353 (HEAD -> dev, origin/dev, origin/HEAD)
+Author: Simi0M0 <somotoso@Outlook.com>
+Date:   Fri Sep 12 14:49:40 2025 -0400
+
+    Replaced Parts of BillView with the BillCalculator Methods
+
+    1) Replaced parts of BillView with BillCalculator methods
+    2) Make BillView more concise
+    3) Deleted for loop and replaced dead variables with BillCalculator methods
+
+commit 352cbddbd2f939f6936623c9745061b74c5c9e34
+Author: Simi0M0 <somotoso@Outlook.com>
+Date:   Fri Sep 12 14:21:28 2025 -0400
+
+    Added calculateTotal Method
+
+    1) Added another method to calculate everything
+    2) To calculate the total cost of the array of items
+    3) Copied previous structure of methods and copied the for loops of each previous method, then returned the total of those calculations
+
+commit d86853c909be6a64d212bc2f9a918e2801348079
+Author: Simi0M0 <somotoso@Outlook.com>
+Date:   Fri Sep 12 14:16:51 2025 -0400
+
+    Added calculateTip Method
+
+    1) Added another method to calculate tips
+    2) To calculate total tip of array of items
+    3) Copied structure of previous method and changed totalTax to totalTip and
+changed 0.1 to 0.2
+
+commit 5797c3b3b57945cda7620e4c369e0b2a437bf2bd
+Author: Simi0M0 <somotoso@Outlook.com>
+Date:   Fri Sep 12 14:11:32 2025 -0400
+
+    Added calculateTax Method
+
+    1) Added another method to calculate tax
+    2) To calculate tax of the array of items
+    3) Copied structured of previous method and added totalTax and 0.1 times amo
+unt of item
+
+commit d0c18dd4a31dc9cd8be513334dbc089ed8de85f8
+Author: Simi0M0 <somotoso@Outlook.com>
+Date:   Thu Sep 11 13:02:01 2025 -0400
+
+    Created calculateSubtotal Method
+
+    1) Created method to calculate subtotal of items
+    2) To get subtotal of the entire items array
+    3) Created new method with BillItem array, checked if it was null, and itera
+ted through items to add subtotal together
+
+commit 33924b43e9dfb7fee5fd981786d73996b110c5b8
+Author: Simi0M0 <somotoso@Outlook.com>
+Date:   Thu Sep 11 12:31:56 2025 -0400
+
+    Added Bill Calculator Class
+
+    1) Created BillCalculator class
+    2) To let it handle calculating subtotal, tax, tip, & total
+    3) Created new class in model package
+
+commit 20d68abc5b15869331d6bf71917154443471a6c1
+Author: Simi0M0 <somotoso@Outlook.com>
+Date:   Thu Sep 11 12:27:51 2025 -0400
+
+    Converted BillItem Fields to Final
+
+    1) Added keyword final in both fields in BillItem
+    2) To not let anyone else change the values once their set in
+    3) Added keyword in fields
+
+commit ddc2b7b45d2b7ec7429d64b84c29c0582aa46570
+Author: Simi0M0 <somotoso@Outlook.com>
+Date:   Thu Sep 11 12:20:33 2025 -0400
+
+    Added Lab 4 Files
+
+    1) Added lab 4 folder to code folder
+    2) To start working on lab 4
+    3) Unzipped lab archive and moved folder into the code folder
+
+commit 37f4b50455daa403894ed6dba48fe6ddbb6242fc
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Sep 11 05:32:39 2025 -0400
+
+    Implemented Behavior of System
+
+    1) Filled in MainWindow.java initialize
+    2) Connect GUI to Java methods
+    3) Retrieved name & amount, added BillItem to Bill, generated String from Bi
+ll, and displayed it
+
+commit 0fa05f752c56fc35062e406514a41d989b2b1cd9
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Sep 11 05:29:15 2025 -0400
+
+    Designed GUI
+
+    1) Created GUI for MainWindow.fxml to use
+    2) Focus on what the GUI should look like
+    3) Connected SceneBuilder with fxml and built layout
+
+commit 8f93c1afb014abb9ff3c4b12bacb9144d833faa4
+Author: Simi0M0 <somotoso@Outlook.com>
+Date:   Thu Sep 4 12:29:15 2025 -0400
+
+    Refactored Files for Lab
+
+    1) Changed package name to lab 3
+    2) To ensure project doesn't have errors
+    3) Refactored titles of files and lines in those files
+
+commit d832ca4a018cdfe8b53d699922edebcfc11f232a
+Author: Simi0M0 <somotoso@Outlook.com>
+Date:   Thu Sep 4 10:13:37 2025 -0400
+
+Author: Simi0M0 <somotoso@Outlook.com>
+Date:   Thu Sep 11 12:27:51 2025 -0400
+
+    Converted BillItem Fields to Final
+
+    1) Added keyword final in both fields in BillItem
+    2) To not let anyone else change the values once their set in
+    3) Added keyword in fields
+
+commit ddc2b7b45d2b7ec7429d64b84c29c0582aa46570
+Author: Simi0M0 <somotoso@Outlook.com>
+Date:   Thu Sep 11 12:20:33 2025 -0400
+
+    Added Lab 4 Files
+
+    1) Added lab 4 folder to code folder
+    2) To start working on lab 4
+    3) Unzipped lab archive and moved folder into the code folder
