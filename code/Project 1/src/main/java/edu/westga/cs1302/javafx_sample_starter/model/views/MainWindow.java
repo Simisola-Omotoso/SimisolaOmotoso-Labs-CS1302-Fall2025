@@ -1,4 +1,4 @@
-package edu.westga.cs1302.javafx_sample_starter.views;
+package edu.westga.cs1302.javafx_sample_starter.model.views;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
