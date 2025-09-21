@@ -20,7 +20,7 @@
       <TextArea fx:id="taskDescriptionArea" prefHeight="200.0" prefWidth="200.0" />
       <Label text="Priority" />
       <ComboBox fx:id="priorityDropdown" prefWidth="150.0" />
-      <Button fx:id="submit" mnemonicParsing="false" text="Submit" />
+      <Button fx:id="submit" mnemonicParsing="false" onAction="#addTask" text="Submit" />
       <ListView fx:id="taskList" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </VBox>
