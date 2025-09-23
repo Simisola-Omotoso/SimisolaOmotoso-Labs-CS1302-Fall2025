@@ -34,6 +34,12 @@ public class MainWindow {
 	private ListView<Task> taskList;
 	
 	private ObservableList<Task> tasks;
+	
+	@FXML
+	private TextArea displayedDescription;
+	
+	@FXML
+	private TextField displayedPriority;
     
     /**
      * Perform any needed initialization of UI components and underlying objects.
@@ -44,11 +50,26 @@ public class MainWindow {
     	
     	priorityDropdown.setItems(FXCollections.observableArrayList("High", "Medium", "Low"));
     	priorityDropdown.setValue("Low");
+    	
+    	taskList.getSelectionModel().selectedItemProperty().addListener((observable, oldSelection, newSelection) -> displayTask(newSelection));
     }
     
     @FXML
     protected void addTask() {
-		Task newTask = new Task(taskNameField.toString(), taskDescriptionArea.toString(), priorityDropdown.toString());
+    	String name = taskNameField.getText();
+    	String description = taskDescriptionArea.getText();
+    	String priority = priorityDropdown.getValue();
+		Task newTask = new Task(name, description, priority);
 		tasks.add(newTask);
 	}
+    
+    protected void displayTask(Task task) {
+    	if (task != null) {
+    		displayedDescription.setText(task.getDescription());
+    		displayedPriority.setText(task.getPriority());
+    	} else {
+    		displayedDescription.clear();
+    		displayedPriority.clear();
+    	}
+    }
 }

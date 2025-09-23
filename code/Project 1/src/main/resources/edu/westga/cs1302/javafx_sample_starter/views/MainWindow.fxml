@@ -23,8 +23,8 @@
       <Button fx:id="submit" mnemonicParsing="false" onAction="#addTask" text="Submit" />
       <ListView fx:id="taskList" prefHeight="200.0" prefWidth="200.0" />
       <Label text="Displayed Description" />
-      <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="displayedDescription" editable="false" prefHeight="200.0" prefWidth="200.0" />
       <Label text="Displayed Priority" />
-      <TextField editable="false" />
+      <TextField fx:id="displayedPriority" editable="false" />
    </children>
 </VBox>
