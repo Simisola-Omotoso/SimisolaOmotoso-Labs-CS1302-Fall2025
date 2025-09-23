@@ -27,4 +27,8 @@ public class Task {
 	public String toString() {
 		return getName();
 	}
+	
+	public void updateDescription(String newDescription) {
+		this.description = newDescription;
+	}
 }
