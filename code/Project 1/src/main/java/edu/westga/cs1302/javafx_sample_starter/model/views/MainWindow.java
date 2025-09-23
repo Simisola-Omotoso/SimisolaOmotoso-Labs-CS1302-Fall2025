@@ -40,6 +40,9 @@ public class MainWindow {
 	
 	@FXML
 	private TextField displayedPriority;
+	
+	@FXML
+	private Button update;
     
     /**
      * Perform any needed initialization of UI components and underlying objects.
@@ -71,5 +74,9 @@ public class MainWindow {
     		displayedDescription.clear();
     		displayedPriority.clear();
     	}
+    }
+    
+    protected void updateDescriptionTask() {
+    	
     }
 }
