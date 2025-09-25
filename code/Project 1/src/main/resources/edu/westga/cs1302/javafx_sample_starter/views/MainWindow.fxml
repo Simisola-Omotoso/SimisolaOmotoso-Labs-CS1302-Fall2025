@@ -27,5 +27,6 @@
       <Button fx:id="update" mnemonicParsing="false" onAction="#updateDescriptionTask" text="Update" />
       <Label text="Displayed Priority" />
       <TextField fx:id="displayedPriority" editable="false" />
+      <Button fx:id="remove" mnemonicParsing="false" text="Remove" />
    </children>
 </VBox>

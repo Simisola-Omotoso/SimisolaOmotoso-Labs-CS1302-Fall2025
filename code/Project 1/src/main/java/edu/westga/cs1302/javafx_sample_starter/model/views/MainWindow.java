@@ -43,6 +43,9 @@ public class MainWindow {
 	
 	@FXML
 	private Button update;
+	
+	@FXML
+	private Button remove;
     
     /**
      * Perform any needed initialization of UI components and underlying objects.
@@ -66,6 +69,7 @@ public class MainWindow {
 		tasks.add(newTask);
 	}
     
+    @FXML
     protected void displayTask(Task task) {
     	if (task != null) {
     		displayedDescription.setText(task.getDescription());
@@ -76,10 +80,16 @@ public class MainWindow {
     	}
     }
     
+    @FXML
     protected void updateDescriptionTask() {
     	Task selectedTask = taskList.getSelectionModel().getSelectedItem();
     	String newDescription = displayedDescription.getText();
     	selectedTask.updateDescription(newDescription);
     	taskList.refresh();
+    }
+    
+    @FXML
+    protected void removeTask() {
+    	
     }
 }
