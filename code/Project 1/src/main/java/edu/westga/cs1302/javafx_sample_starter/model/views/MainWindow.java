@@ -1,4 +1,6 @@
 package edu.westga.cs1302.javafx_sample_starter.model.views;
+import java.util.List;
+
 import edu.westga.cs1302.javafx_sample_starter.model.Task;
 
 import javafx.fxml.FXML;
@@ -111,5 +113,15 @@ public class MainWindow {
     protected void removeTask() {
     	Task selectedTask = taskList.getSelectionModel().getSelectedItem();
     	tasks.remove(selectedTask);
+    }
+    
+    public static int returnNumOfTask(String priority, List<Task> taskList) {
+    	int count = 0;
+    	for (Task task : taskList) {
+    		if (task.getPriority().equals(priority)) {
+    			count++;
+    		}
+    	}
+    	return count;
     }
 }
