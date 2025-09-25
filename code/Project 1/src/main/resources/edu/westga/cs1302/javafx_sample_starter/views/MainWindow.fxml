@@ -27,6 +27,12 @@
       <Button fx:id="update" mnemonicParsing="false" onAction="#updateDescriptionTask" text="Update" />
       <Label text="Displayed Priority" />
       <TextField fx:id="displayedPriority" editable="false" />
-      <Button fx:id="remove" mnemonicParsing="false" text="Remove" />
+      <Button fx:id="remove" mnemonicParsing="false" onAction="#removeTask" text="Remove" />
+      <Label fx:id="highTaskNumLabel" text="Number of High Tasks:" />
+      <Button fx:id="highTaskNumCounter" mnemonicParsing="false" />
+      <Label fx:id="mediumTaskNumLabel" text="Number of Medium Tasks:" />
+      <Button fx:id="mediumTaskNumCounter" mnemonicParsing="false" />
+      <Label fx:id="lowTaskNumLabel" text="Number of Low Tasks:" />
+      <Button fx:id="lowTaskNumCounter" mnemonicParsing="false" />
    </children>
 </VBox>

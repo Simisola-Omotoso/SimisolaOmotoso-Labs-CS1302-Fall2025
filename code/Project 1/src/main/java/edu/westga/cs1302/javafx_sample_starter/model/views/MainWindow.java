@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.collections.FXCollections;
@@ -46,6 +47,24 @@ public class MainWindow {
 	
 	@FXML
 	private Button remove;
+	
+	@FXML
+	private Label highTaskNumLabel;
+	
+	@FXML
+	private Label mediumTaskNumLabel;
+	
+	@FXML
+	private Label lowTaskNumLabel;
+	
+	@FXML
+	private Button highTaskNumCounter;
+	
+	@FXML
+	private Button mediumTaskNumCounter;
+	
+	@FXML
+	private Button lowTaskNumCounter;
     
     /**
      * Perform any needed initialization of UI components and underlying objects.
