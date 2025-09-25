@@ -77,6 +77,9 @@ public class MainWindow {
     }
     
     protected void updateDescriptionTask() {
-    	
+    	Task selectedTask = taskList.getSelectionModel().getSelectedItem();
+    	String newDescription = displayedDescription.getText();
+    	selectedTask.updateDescription(newDescription);
+    	taskList.refresh();
     }
 }
