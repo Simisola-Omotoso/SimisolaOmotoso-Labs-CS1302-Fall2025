@@ -124,4 +124,15 @@ public class MainWindow {
     	}
     	return count;
     }
+    
+    @FXML
+    protected void displayNumOfTasks() {
+    	int numOfLowTasks = MainWindow.returnNumOfTask("Low", tasks);
+    	int numOfMediumTasks = MainWindow.returnNumOfTask("Medium", tasks);
+    	int numOfHighTasks = MainWindow.returnNumOfTask("High", tasks);
+    	
+    	highTaskNumCounter.setText("" + numOfHighTasks + "");
+    	mediumTaskNumCounter.setText("" + numOfMediumTasks + "");
+    	lowTaskNumCounter.setText("" + numOfLowTasks + "");
+    }
 }
