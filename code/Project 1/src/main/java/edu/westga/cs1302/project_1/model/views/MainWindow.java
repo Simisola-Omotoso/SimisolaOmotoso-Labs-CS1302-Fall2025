@@ -1,8 +1,7 @@
-package edu.westga.cs1302.javafx_sample_starter.model.views;
+package edu.westga.cs1302.project_1.model.views;
 import java.util.List;
 
-import edu.westga.cs1302.javafx_sample_starter.model.Task;
-
+import edu.westga.cs1302.project_1.model.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;

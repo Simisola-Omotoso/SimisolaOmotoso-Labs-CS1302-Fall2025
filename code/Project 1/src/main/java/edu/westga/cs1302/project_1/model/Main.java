@@ -1,4 +1,4 @@
-package edu.westga.cs1302.javafx_sample_starter.model;
+package edu.westga.cs1302.project_1.model;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +16,7 @@ import java.io.IOException;
  */
 public class Main extends Application {
   private static final String WINDOW_TITLE = "JavaFX Starter Sample";
-  private static final String GUI_RESOURCE = "views/MainWindow.fxml";
+  private static final String GUI_RESOURCE = "/edu/westga/cs1302/project_1/views/MainWindow.fxml";
 
   /**
    * JavaFX entry point.

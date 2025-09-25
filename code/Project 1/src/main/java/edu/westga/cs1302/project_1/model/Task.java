@@ -1,4 +1,4 @@
-package edu.westga.cs1302.javafx_sample_starter.model;
+package edu.westga.cs1302.project_1.model;
 
 public class Task {
 	

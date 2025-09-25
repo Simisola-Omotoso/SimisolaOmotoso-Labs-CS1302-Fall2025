@@ -9,7 +9,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="840.0" prefWidth="557.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.javafx_sample_starter.views.MainWindow">
+<VBox alignment="CENTER" prefHeight="840.0" prefWidth="557.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.project_1.views.MainWindow">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
@@ -29,10 +29,10 @@
       <TextField fx:id="displayedPriority" editable="false" />
       <Button fx:id="remove" mnemonicParsing="false" onAction="#removeTask" text="Remove" />
       <Label fx:id="highTaskNumLabel" text="Number of High Tasks:" />
-      <Button fx:id="highTaskNumCounter" mnemonicParsing="false" />
+      <Button fx:id="highTaskNumCounter" mnemonicParsing="false" onAction="#displayNumOfTasks" />
       <Label fx:id="mediumTaskNumLabel" text="Number of Medium Tasks:" />
-      <Button fx:id="mediumTaskNumCounter" mnemonicParsing="false" />
+      <Button fx:id="mediumTaskNumCounter" mnemonicParsing="false" onAction="#displayNumOfTasks" />
       <Label fx:id="lowTaskNumLabel" text="Number of Low Tasks:" />
-      <Button fx:id="lowTaskNumCounter" mnemonicParsing="false" />
+      <Button fx:id="lowTaskNumCounter" mnemonicParsing="false" onAction="#displayNumOfTasks" />
    </children>
 </VBox>
