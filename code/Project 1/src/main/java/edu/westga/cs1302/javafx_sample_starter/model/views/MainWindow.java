@@ -90,6 +90,7 @@ public class MainWindow {
     
     @FXML
     protected void removeTask() {
-    	
+    	Task selectedTask = taskList.getSelectionModel().getSelectedItem();
+    	tasks.remove(selectedTask);
     }
 }
