@@ -1,5 +1,6 @@
 package edu.westga.cs1302.lab5.persistence;
 
+import edu.westga.cs1302.lab5.model.Student;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -7,18 +8,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import edu.westga.cs1302.lab5.model.Student;
-
-/** Supports saving and loading student data,
- * 
+/** Supports saving and loading student data.
+ *
  * @author CS 1302
+ * 
  * @version Fall 2025
  */
 public class StudentDataPersistenceManager {
-	
-	public static final String FILE_LOCATION = "data.txt";
-	
-	/** Save the students!
+
+  public static final String FILE_LOCATION = "data.txt";
+
+ /** Save the students!.
 	 * 
 	 * @precondition students != null
 	 * @postcondition none
@@ -53,6 +53,10 @@ public class StudentDataPersistenceManager {
 	 * @throws FileNotFoundException no file exists at FILE_LOCATION
 	 * @throws IOException unable to read file due to formatting issue 
 	 */
+	public static void loadStudentData(Student[] students) throws FileNotFoundException, IOException {
+		StudentDataPersistenceManager.loadStudentData();
+	}
+	
 	public static Student[] loadStudentData() throws FileNotFoundException, IOException {
 		ArrayList<Student> students = new ArrayList<Student>();
 		File inputFile = new File(StudentDataPersistenceManager.FILE_LOCATION);

@@ -1,6 +1,6 @@
 package edu.westga.cs1302.project_1.model.views;
-import java.util.List;
 
+import java.util.List;
 import edu.westga.cs1302.project_1.model.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -71,67 +71,105 @@ public class MainWindow {
      * Perform any needed initialization of UI components and underlying objects.
      */
     public void initialize() {
-    	tasks = FXCollections.observableArrayList();
-    	taskList.setItems(tasks);
+    	try {
+    		this.tasks = FXCollections.observableArrayList();
+        	this.taskList.setItems(this.tasks);
+        	
+        	this.priorityDropdown.setItems(FXCollections.observableArrayList("High", "Medium", "Low"));
+        	this.priorityDropdown.setValue("Low");
+        	
+        	this.taskList.getSelectionModel().selectedItemProperty().addListener((observable, oldSelection, newSelection) -> this.displayTask(newSelection));
+    	} catch (Exception error) {
+    		System.err.println("Initialization failed: " + error.getMessage());
+    	}
     	
-    	priorityDropdown.setItems(FXCollections.observableArrayList("High", "Medium", "Low"));
-    	priorityDropdown.setValue("Low");
-    	
-    	taskList.getSelectionModel().selectedItemProperty().addListener((observable, oldSelection, newSelection) -> displayTask(newSelection));
     }
     
     @FXML
     protected void addTask() {
-    	String name = taskNameField.getText();
-    	String description = taskDescriptionArea.getText();
-    	String priority = priorityDropdown.getValue();
-		Task newTask = new Task(name, description, priority);
-		tasks.add(newTask);
+    	String name = this.taskNameField.getText();
+    	String description = this.taskDescriptionArea.getText();
+    	String priority = this.priorityDropdown.getValue();
+    	
+    	if (name == null || name.trim().isEmpty()) {
+    		System.err.println("Task name is needed.");
+    	}
+    	try {
+    		Task newTask = new Task(name, description, priority);
+    		this.tasks.add(newTask);
+    	} catch (IllegalArgumentException error) {
+    		System.err.println("Invalid task: " + error.getMessage());
+    	}
 	}
     
     @FXML
     protected void displayTask(Task task) {
     	if (task != null) {
-    		displayedDescription.setText(task.getDescription());
-    		displayedPriority.setText(task.getPriority());
+    		this.displayedDescription.setText(task.getDescription());
+    		this.displayedPriority.setText(task.getPriority());
     	} else {
-    		displayedDescription.clear();
-    		displayedPriority.clear();
+    		this.displayedDescription.clear();
+    		this.displayedPriority.clear();
     	}
     }
     
     @FXML
     protected void updateDescriptionTask() {
-    	Task selectedTask = taskList.getSelectionModel().getSelectedItem();
-    	String newDescription = displayedDescription.getText();
-    	selectedTask.updateDescription(newDescription);
-    	taskList.refresh();
+    	try {
+    		Task selectedTask = this.taskList.getSelectionModel().getSelectedItem();
+        	String newDescription = this.displayedDescription.getText();
+        	selectedTask.updateDescription(newDescription);
+        	this.taskList.refresh();
+    	} catch (Exception error) {
+    		System.err.println("Failed to update task: " + error.getMessage());
+    	}
     }
     
     @FXML
     protected void removeTask() {
-    	Task selectedTask = taskList.getSelectionModel().getSelectedItem();
-    	tasks.remove(selectedTask);
+    	try {
+    		Task selectedTask = this.taskList.getSelectionModel().getSelectedItem();
+        	this.tasks.remove(selectedTask);
+    	} catch (Exception error) {
+    		System.err.println("Failed to remove task: " + error.getMessage());
+    	}
     }
     
+    /**
+     * Returns number of tasks for each priority
+     * 
+     * @param priority priority of task
+     * @param taskList list of tasks
+     * @return number of tasks for specified priority
+     */
+    
     public static int returnNumOfTask(String priority, List<Task> taskList) {
-    	int count = 0;
-    	for (Task task : taskList) {
-    		if (task.getPriority().equals(priority)) {
-    			count++;
-    		}
+    	try {
+    		int count = 0;
+        	for (Task task : taskList) {
+        		if (task.getPriority().equals(priority)) {
+        			count++;
+        		}
+        	}
+        	return count;
+    	} catch (Exception error) {
+    		System.err.println("Failed to count: " + error.getMessage());
+    		return 0;
     	}
-    	return count;
     }
     
     @FXML
     protected void displayNumOfTasks() {
-    	int numOfLowTasks = MainWindow.returnNumOfTask("Low", tasks);
-    	int numOfMediumTasks = MainWindow.returnNumOfTask("Medium", tasks);
-    	int numOfHighTasks = MainWindow.returnNumOfTask("High", tasks);
-    	
-    	highTaskNumCounter.setText("" + numOfHighTasks + "");
-    	mediumTaskNumCounter.setText("" + numOfMediumTasks + "");
-    	lowTaskNumCounter.setText("" + numOfLowTasks + "");
+    	try {
+    		int numOfLowTasks = MainWindow.returnNumOfTask("Low", this.tasks);
+        	int numOfMediumTasks = MainWindow.returnNumOfTask("Medium", this.tasks);
+        	int numOfHighTasks = MainWindow.returnNumOfTask("High", this.tasks);
+        	
+        	this.highTaskNumCounter.setText("" + numOfHighTasks + "");
+        	this.mediumTaskNumCounter.setText("" + numOfMediumTasks + "");
+        	this.lowTaskNumCounter.setText("" + numOfLowTasks + "");
+    	} catch (Exception error) {
+    		System.err.println("Failed to display: " + error.getMessage());
+    	}
     }
 }
