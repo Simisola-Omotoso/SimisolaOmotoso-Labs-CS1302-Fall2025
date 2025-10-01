@@ -19,8 +19,8 @@ public class StudentDataPersistenceManager {
   public static final String FILE_LOCATION = "data.txt";
 
  /** Save the students!.
-	 * 
-	 * @precondition students != null
+  * 
+  * @precondition students != null
 	 * @postcondition none
 	 * 
 	 * @param students the set of students to save
@@ -63,11 +63,13 @@ public class StudentDataPersistenceManager {
 		
 		try (Scanner reader = new Scanner(inputFile)) {
 			while (reader.hasNextLine()) {
-				String name = reader.nextLine();
-				if (!reader.hasNextLine()) {
-					throw new IOException("missing grade for " + name);
+				String line = reader.nextLine();
+				String[] values = line.split(",");
+				String name = values[0].trim();
+				if (values.length != 2) {
+					throw new IOException("Invalid CSV format");
 				}
-				int grade = Integer.parseInt(reader.nextLine());
+				int grade = Integer.parseInt(values[1].trim());
 				students.add(new Student(name, grade));
 			}
 		} catch (NumberFormatException error) {

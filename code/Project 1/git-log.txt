@@ -1,0 +1,159 @@
+commit 6747428ae7e75e47b871b0257b8231f57a8b81c8 (HEAD -> dev, origin/dev, origin/HEAD)
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Mon Sep 29 06:37:28 2025 -0400
+
+    Fixed Checkstyle and Handled Exception
+
+    1) Code has been reformatted and exceptions were added
+    2) To satisfy checkstyle and handle exceptions properly
+    3) Used built-in checkstyle to reformat code and added try/catches in most of the methods
+
+commit 0dde3289b68983493273b3a789a403cb274ace4c
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Sep 25 06:43:48 2025 -0400
+
+    Connect Business Logic and UI for Counting Number of Tasks for Each Priority
+
+    1) New method for displaying number of tasks
+    2) To display number of tasks on buttons
+    3) Created new method called displayNumOfTasks, used the previous static method, and set the text for each of them
+
+commit 809f13a479440f82f4f8b7177a3f2de0f8ec0846
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Sep 25 06:09:52 2025 -0400
+
+    Business Logic for Counting Number of Tasks for Each Priority
+
+    1) New method for returning number of tasks for each priority
+    2) To return number of tasks for specified priority for the buttons
+    3) Added new method called returnNumOfTask() that takes in String priority and List of tasks, created a counter, looped through the taskList, counted each task that had that priority, and returned final count
+
+commit e71cd029be238b9fb5829816d8f785e5acd0cc48
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Sep 25 05:52:53 2025 -0400
+
+    Implementing UI for Counting Number of Tasks
+
+    1) New labels and buttons for counting number of tasks per priority
+    2) To display counter for each priority
+    3) Added new UI components: labels and buttons for each priority, and added corresponding fields in MainWindow
+
+commit 83b64b7a9dc45682333c8af3b625925bf9636985
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Sep 25 05:43:53 2025 -0400
+
+    Implement UI for Removing Task from List
+
+    1) New method for removing task
+    2) To remove task when button is clicked on
+    3) Added removeTask() that gets selected task and removes it from tasks
+
+commit 926f11b5fd0d06adb5a287bd5ca6c2aad95e37a6
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Sep 25 05:41:07 2025 -0400
+
+    UI for Removing Task from List
+
+    1) New UI button for removing task
+    2) To support UI removing task when clicked on
+    3) Added new button in UI and the variable to MainWindow as well as a new method
+
+commit 044e5ca4734c4fff277a2ac86a2429b4c8e825cb
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Sep 25 05:33:40 2025 -0400
+
+    Connect Business Logic and UI for Updating Description of Task in List
+
+    1) New method called updateDescriptionTask
+    2) To update displayDescription in UI
+    3) Created new method that selects current task, gets new description from displayedDescription, and inputs new description
+
+commit 942763ac8e9b3ba3167110e43da4e3e42af22984
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Tue Sep 23 19:57:04 2025 -0400
+
+    Business Logic for Updating Description of Task in List
+
+    1) New method inside Task class for updating description
+    2) To update description in UI
+    3) Added new method called updateDescription and equaled newDescription to this.description
+
+commit 05c59a474262b6836c25687df87d5f979a00a550
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Tue Sep 23 19:44:02 2025 -0400
+
+    Implement UI for Updating Description of Task
+
+    1) Display Description is now editable and there's a new Update button
+    2) To update description of task
+    3) Checked editable of display description and added a new button that's connected to a updateDescriptionTask method
+
+commit bc35380a229031cf0a3ddacf9dfe16553e321ac0
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Tue Sep 23 14:56:04 2025 -0400
+
+    Connect UI to Business Logic for Displaying Task
+
+    1) New method called displayTask and a listener in initialize()
+    2) To display information when selecting a task in ListView
+    3) Created new method called displayTask that takes in task and sets the text, created a listener that accesses taskList and selects whatever is selected for displayTask to use it
+
+commit dcf7ff75a243b16a31a6502d5cf76bc88c2ab7ce
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Tue Sep 23 14:05:51 2025 -0400
+
+    UI for Adding Tasks
+
+    1) New UI components were added to display task information when selected in ListView
+    2) To support displaying information when selecting a task in ListView
+    3) Added new components into SceneBuilder: two labels, one TextArea, and one TextField
+
+commit 7bfd3490faa68c23044ea68918850f6daf91885e
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Sun Sep 21 18:33:40 2025 -0400
+
+    Connect UI to Business Logic for Adding Task
+
+    1) Added a new method to MainWindow for adding tasks to ListView
+    2) To let TaskManager handle adding tasks
+    3) Added new protected void method that creates new task and adds it to observableList for ListView as well as initializing the ComboBox
+
+commit 90a212f24a1da8c1aa3f82f52eb219b70fdb01c9
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Sun Sep 21 17:36:21 2025 -0400
+
+    Business Logic for Storing a Task
+
+    1) Created a class called Task
+    2) To use for Task Manager
+    3) Created new class in Eclipse and named it Task and added fields, constructor, getters, and toString
+
+commit bed6a811a9ad61c101c9e61aba44ab8cd652709a
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Sat Sep 20 14:44:17 2025 -0400
+
+    UI for Adding Tasks
+
+    1) Added UI components and added fields for those components
+    2) To connect UI to codebehind
+    3) Entered components in SceneBuilder, saved it, and entered each editable component as a field in MainWindow.java
+
+commit c135c9f6b06315ffa3f83ecc0fa95ef9543edfc4
+Author: Simi0M0 <somotoso@Outlook.com>
+Date:   Sat Sep 20 13:42:45 2025 -0400
+
+    Added git-log.txt
+
+    1) Added git log txt history file
+    2) To keep track of commits
+    3) Created new file through Eclipse and named it git-log.txt
+
+commit 8f35becfaa109e7acb73c79fafb4d3675c76ef21
+Author: Simi0M0 <somotoso@Outlook.com>
+Date:   Sat Sep 20 13:40:35 2025 -0400
+
+    Added Project 1 Files (JavaFX Starter)
+
+    1) Added JavaFX starter files to code folder
+    2) To start Project 1
+    3) Renamed JavaFX starter files to Project 1 and dropped the files into code folder
