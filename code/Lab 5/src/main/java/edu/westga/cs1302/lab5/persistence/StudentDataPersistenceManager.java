@@ -14,24 +14,23 @@ import java.util.Scanner;
  * 
  * @version Fall 2025
  */
-public class StudentDataPersistenceManager {
+public class StudentDataPersistenceManager extends Persistence {
 
   public static final String FILE_LOCATION = "data.txt";
-
- /** Save the students!.
-  * 
-  * @precondition students != null
-	 * @postcondition none
-	 * 
-	 * @param students the set of students to save
-	 * @throws IllegalArgumentException if precondition is violated
-	 * @throws IOException Unable to write to FILE_LOCATION
-	 */
-	public static void saveStudentData(Student[] students) throws IOException, IllegalArgumentException {
-		StudentDataPersistenceManager.saveStudentData(students, StudentDataPersistenceManager.FILE_LOCATION);
-	}
+ 
 	
-	public static void saveStudentData(Student[] students, String fileLocation) throws IOException, IllegalArgumentException {
+ /** Save the students!.
+	  * 
+	  * @precondition students != null
+		 * @postcondition none
+		 * 
+		 * @param students the set of students to save
+		 * @param fileLocation location of file
+		 * @throws IllegalArgumentException if precondition is violated
+		 * @throws IOException Unable to write to FILE_LOCATION
+		 */
+	@Override
+	public void saveStudentData(Student[] students, String fileLocation) throws IllegalArgumentException, IOException {
 		if (students == null) {
 			throw new IllegalArgumentException("must provide an array of students");
 		}
@@ -43,7 +42,7 @@ public class StudentDataPersistenceManager {
 			}
 		}
 	}
-
+	
 	/** Load the students!
 	 * 
 	 * @precondition none
@@ -53,11 +52,9 @@ public class StudentDataPersistenceManager {
 	 * @throws FileNotFoundException no file exists at FILE_LOCATION
 	 * @throws IOException unable to read file due to formatting issue 
 	 */
-	public static void loadStudentData(Student[] students) throws FileNotFoundException, IOException {
-		StudentDataPersistenceManager.loadStudentData();
-	}
 	
-	public static Student[] loadStudentData() throws FileNotFoundException, IOException {
+	@Override
+	public Student[] loadStudentData() throws FileNotFoundException, IOException {
 		ArrayList<Student> students = new ArrayList<Student>();
 		File inputFile = new File(StudentDataPersistenceManager.FILE_LOCATION);
 		
