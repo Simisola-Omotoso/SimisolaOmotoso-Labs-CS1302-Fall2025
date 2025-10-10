@@ -1,5 +1,7 @@
 package edu.westga.cs1302.task_tracker.model;
 
+import java.util.Comparator;
+
 /** Stores basic information for a Task
  * 
  * @author CS 1302
@@ -24,7 +26,7 @@ public class Task {
 	
 	/** Create a new Task with the provided information.
 	 * 
-	 * @preconditon name != null && !name.isEmpty() &&
+	 * @precondition name != null && !name.isEmpty() &&
 	 * 				description != null &&
 	 * 				priority != null
 	 * 
@@ -108,4 +110,5 @@ public class Task {
 	public String toString() {
 		return this.name;
 	}
+	
 }
