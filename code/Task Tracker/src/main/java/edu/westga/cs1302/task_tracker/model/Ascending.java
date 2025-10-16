@@ -1,5 +1,7 @@
 package edu.westga.cs1302.task_tracker.model;
 
+import java.util.Comparator;
+
 import edu.westga.cs1302.task_tracker.model.Task.TaskPriority;
 
 /** Compares tasks in ascending order
@@ -8,7 +10,7 @@ import edu.westga.cs1302.task_tracker.model.Task.TaskPriority;
  * @version 1.0
  */
 
-public class Ascending {
+public class Ascending implements Comparator<Task> {
 	
 	/** Compares two tasks and returns corresponding integer
 	 * 
@@ -30,5 +32,10 @@ public class Ascending {
 			return -1;
 		}
 		return 1;
+	}
+	
+	@Override
+	public String toString() {
+		return "Ascend";
 	}
 }

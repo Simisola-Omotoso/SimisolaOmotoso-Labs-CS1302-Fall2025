@@ -1,6 +1,8 @@
 package edu.westga.cs1302.task_tracker.views;
 
 import java.util.Comparator;
+import edu.westga.cs1302.task_tracker.model.Ascending;
+import edu.westga.cs1302.task_tracker.model.Descending;
 
 import edu.westga.cs1302.task_tracker.model.Task;
 import edu.westga.cs1302.task_tracker.model.Task.TaskPriority;
@@ -15,6 +17,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.collections.FXCollections;
 
 /** Controller class for MainWindow of the Task Tracker system.
  * 
@@ -81,6 +84,13 @@ public class MainWindow {
     	if (this.order.getValue() != null) {
     		this.tasks.getItems().sort(this.order.getValue());
     	}
+    	
+    	this.order.setOnAction(e -> {
+    		Comparator<Task> selected = this.order.getValue();
+    		if (selected != null) {
+    			FXCollections.sort(this.tasks.getItems(), selected);
+    		}
+    	});
     }
 
     /** Perform any needed initialization of UI components and underlying objects.
@@ -89,5 +99,6 @@ public class MainWindow {
     public void initialize() {
     	this.priority.getItems().addAll(TaskPriority.HIGH, TaskPriority.MEDIUM, TaskPriority.LOW);
     	this.priority.setValue(this.priority.getItems().get(0));
+    	this.order.getItems().addAll(new Ascending(), new Descending());
     }
 }
