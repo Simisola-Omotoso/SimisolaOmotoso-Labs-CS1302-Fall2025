@@ -1,0 +1,39 @@
+commit a44bc93aaebad5b7c9590f9f3af99c2a491a6564 (HEAD -> dev, origin/dev, origin/HEAD)
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Oct 16 07:03:43 2025 -0400
+
+    Support Sorting Tasks
+
+    1) sortTasks method
+    2) To sort tasks
+    3) Added comparator options to ComboBox and added functionality that when an option is selected, the lists sorts itself
+
+commit 1f735a6bcfb276c5778225212aa6d1ae3f95fe2e
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Fri Oct 10 11:54:13 2025 -0400
+
+    Descending Comparison of Tasks
+
+    1) New class called Descending that handles the sorting of tasks in descending order
+    2) To sort tasks in descending order
+    3) Added new class and implemented a method to compare two tasks and return certain values based on type of sort
+
+commit 757e01f0d126f323b445a47bb57220f3f54a9a25
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Oct 9 22:47:07 2025 -0400
+
+    Ascending Comparison of Tasks
+
+    1) New class called Ascending that handles the sorting of tasks in ascending order
+    2) To sort tasks in ascending order
+    3) Added new class and implemented a method called compare that returns certain values based on the type of sort
+
+commit fb0bffea130e202ae06a07c155ed9b5f2224a384
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Oct 9 12:24:44 2025 -0400
+
+    Added TaskTracker Files
+
+    1) TaskTracker project
+    2) To start lab 6
+    3) Moved TaskTracker files to code folder
