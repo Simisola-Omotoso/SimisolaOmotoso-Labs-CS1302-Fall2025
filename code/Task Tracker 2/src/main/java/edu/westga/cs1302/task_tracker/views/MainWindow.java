@@ -49,6 +49,7 @@ public class MainWindow {
     void addTask(ActionEvent event) {
     	try {
     		this.tasks.getItems().add(new Task(this.name.getText(), this.description.getText(), this.priority.getValue()));
+    		this.sortTasks(event);
     	} catch (IllegalArgumentException error) {
     		Alert alert = new Alert(AlertType.ERROR);
     		alert.setContentText(error.getMessage());
@@ -83,6 +84,7 @@ public class MainWindow {
     @FXML
     void removeTask(ActionEvent event) {
     	Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
+    	this.sortTasks(event);
     	if (selectedTask != null) {
     		this.tasks.getItems().remove(selectedTask);
     	}
@@ -98,6 +100,7 @@ public class MainWindow {
     @FXML
     void updateDescription(ActionEvent event) {
     	Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
+    	this.sortTasks(event);
     	if (selectedTask != null) {
     		selectedTask.setDescription(this.selectedDescription.getText());
     	}
