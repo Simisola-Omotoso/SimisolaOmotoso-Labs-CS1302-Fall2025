@@ -35,6 +35,7 @@ public class MainWindow {
     @FXML private TextArea selectedDescription;
     @FXML private TextField selectedPriority;
     @FXML private ListView<Task> tasks;
+    @FXML private ListView<Task> subTasks;
     @FXML private ComboBox<Comparator<Task>> order;
 
     /** Add a new task with the provided information to the listview.
