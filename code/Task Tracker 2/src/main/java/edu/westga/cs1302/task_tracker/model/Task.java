@@ -1,5 +1,8 @@
 package edu.westga.cs1302.task_tracker.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /** Stores basic information for a Task
  * 
  * @author CS 1302
@@ -124,5 +127,14 @@ public class Task {
 	@Override
 	public String toString() {
 		return this.name;
+	}
+	
+	public ContainerTask addTask(Task task) {
+		ContainerTask newTask = new ContainerTask(task.getName(), task.getDescription(), task.getPriority());
+		return newTask;
+	}
+	
+	public List<Task> getSubTasks() {
+		return new ArrayList<Task>();
 	}
 }
