@@ -171,5 +171,19 @@ public class MainWindow {
     	this.order.getItems().add(new AscendingByName());
     	this.order.getItems().add(new DescendingByName());
     	this.priority.setValue(this.priority.getItems().get(0));
+    	
+    	this.tasks.getSelectionModel().selectedItemProperty().addListener(
+    		(observable, oldTask, selectedTask) -> {
+    			if (selectedTask != null) {
+    				this.subTasks.getItems().setAll(selectedTask.getSubTasks());
+    				this.selectedPriority.setText(selectedTask.getPriority().toString());
+    				this.selectedDescription.setText(selectedTask.getDescription());
+    			} else {
+    				this.subTasks.getItems().clear();
+    				this.selectedPriority.setText("");
+    				this.selectedDescription.setText("");
+    			}
+    		}
+    	);
     }
 }
