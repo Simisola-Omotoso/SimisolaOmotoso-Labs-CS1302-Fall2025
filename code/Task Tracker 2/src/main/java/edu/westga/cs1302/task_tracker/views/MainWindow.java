@@ -34,6 +34,8 @@ public class MainWindow {
     @FXML private ComboBox<TaskPriority> priority;
     @FXML private TextArea selectedDescription;
     @FXML private TextField selectedPriority;
+    @FXML private TextArea selectedDescriptionSub;
+    @FXML private TextField selectedPrioritySub;
     @FXML private ListView<Task> tasks;
     @FXML private ListView<Task> subTasks;
     @FXML private ComboBox<Comparator<Task>> order;
