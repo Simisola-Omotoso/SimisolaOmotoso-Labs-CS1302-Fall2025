@@ -97,6 +97,15 @@ public class MainWindow {
     		this.selectedDescription.setText(selectedTask.getDescription());
     	}
     }
+    
+    @FXML
+    void selectSubTask(MouseEvent event) {
+    	Task selectedSubTask = this.subTasks.getSelectionModel().getSelectedItem();
+    	if (selectedSubTask != null) {
+    		this.selectedPrioritySub.setText(selectedSubTask.getPriority().toString());
+    		this.selectedDescriptionSub.setText(selectedSubTask.getDescription());
+    	}
+    }
 
     /** Remove the currently selected task.
      * 
@@ -187,5 +196,15 @@ public class MainWindow {
     			}
     		}
     	);
+    	
+    	this.subTasks.getSelectionModel().selectedItemProperty().addListener(
+        	(observable, oldTask, selectedSubTask) -> {
+        		if (selectedSubTask != null) {
+        			Alert alert = new Alert(AlertType.INFORMATION);
+        			alert.setContentText(selectedSubTask.getName() + "\n" + selectedSubTask.getPriority().toString() + "\n" + selectedSubTask.getDescription());
+        			alert.showAndWait();
+        		}
+        	}
+        );
     }
 }
