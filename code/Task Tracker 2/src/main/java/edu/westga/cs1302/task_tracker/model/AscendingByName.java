@@ -2,8 +2,6 @@ package edu.westga.cs1302.task_tracker.model;
 
 import java.util.Comparator;
 
-import edu.westga.cs1302.task_tracker.model.Task.TaskPriority;
-
 /** Compare two Tasks to identify the correct Ascending ordering of the tasks by name.
  * 
  * @author CS 1302
@@ -12,8 +10,7 @@ import edu.westga.cs1302.task_tracker.model.Task.TaskPriority;
 
 public class AscendingByName implements Comparator<Task> {
 	
-	/** Returns a value indicating ordering of the two tasks based 
-	 * on Ascending priority.
+	/** Returns ordering of the two tasks based name.
 	 * 
 	 * @precondition o1 != null && o2 != null
 	 * @postcondition none
@@ -21,9 +18,7 @@ public class AscendingByName implements Comparator<Task> {
 	 * @param o1 the first task to compare
 	 * @param o2 the second task to compare
 	 * 
-	 * @return -1 if o1 goes first
-	 * 			0 if o1 and o2 are same
-	 * 			1 if o1 goes last
+	 * @return ordering of tasks
 	 */
 	@Override
 	public int compare(Task o1, Task o2) {

@@ -44,7 +44,7 @@ public class Task {
 	
 	/** Create a new Task with the provided information.
 	 * 
-	 * @preconditon name != null && !name.isEmpty() &&
+	 * @precondition name != null && !name.isEmpty() &&
 	 * 				description != null &&
 	 * 				priority != null
 	 * 
@@ -129,11 +129,25 @@ public class Task {
 		return this.name;
 	}
 	
+	/** Adds new task
+	 * 
+	 * @precondition task != null
+	 * 
+	 * @param task new task to be added
+	 * @return new ContainerTask
+	 */
 	public ContainerTask addTask(Task task) {
+		if (task == null) {
+			throw new IllegalArgumentException("Task cannot be null.");
+		}
 		ContainerTask newTask = new ContainerTask(task.getName(), task.getDescription(), task.getPriority());
 		return newTask;
 	}
 	
+	/** Returns subtasks
+	 * 
+	 * @return ArrayList of tasks
+	 */
 	public List<Task> getSubTasks() {
 		return new ArrayList<Task>();
 	}

@@ -34,8 +34,6 @@ public class MainWindow {
     @FXML private ComboBox<TaskPriority> priority;
     @FXML private TextArea selectedDescription;
     @FXML private TextField selectedPriority;
-    @FXML private TextArea selectedDescriptionSub;
-    @FXML private TextField selectedPrioritySub;
     @FXML private ListView<Task> tasks;
     @FXML private ListView<Task> subTasks;
     @FXML private ComboBox<Comparator<Task>> order;
@@ -62,6 +60,16 @@ public class MainWindow {
     	}
     }
     
+    /** Add a new subtask with the provided information to the listview.
+     * 
+     * @precondition none
+     * @postcondition A task will be added to the listview with 
+     * 							  1) a name matching the text of the name textfield, 
+     * 							  2) a description matching the text of the description textarea,
+     * 							  3) a priority matching the selected value of the priority combobox,
+     * 
+     * @param event we will not use this parameter, only here due to JavaFX Library requirement
+     */
     @FXML
     void addSubTask(ActionEvent event) {
     	try {
@@ -95,16 +103,29 @@ public class MainWindow {
     	if (selectedTask != null) {
     		this.selectedPriority.setText(selectedTask.getPriority().toString());
     		this.selectedDescription.setText(selectedTask.getDescription());
-    	}
+    		this.subTasks.getItems().setAll(selectedTask.getSubTasks());
+    	} else {
+			this.subTasks.getItems().clear();
+			this.selectedPriority.setText("");
+			this.selectedDescription.setText("");
+		}
     }
     
+    /** Display the alert information of a subtask selected in the listview.
+     * 
+     * @precondition none
+     * @postcondition an alert window will be displayed at the top of the screen showing the subtask information
+     * 
+     * @param event we will not use this parameter, only here due to JavaFX Library requirement
+     */
     @FXML
     void selectSubTask(MouseEvent event) {
-    	Task selectedSubTask = this.subTasks.getSelectionModel().getSelectedItem();
+    	Task selectedSubTask = this.tasks.getSelectionModel().getSelectedItem();
     	if (selectedSubTask != null) {
-    		this.selectedPrioritySub.setText(selectedSubTask.getPriority().toString());
-    		this.selectedDescriptionSub.setText(selectedSubTask.getDescription());
-    	}
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setContentText(selectedSubTask.getName() + "\n" + selectedSubTask.getPriority().toString() + "\n" + selectedSubTask.getDescription());
+			alert.showAndWait();
+		}
     }
 
     /** Remove the currently selected task.
@@ -182,29 +203,5 @@ public class MainWindow {
     	this.order.getItems().add(new AscendingByName());
     	this.order.getItems().add(new DescendingByName());
     	this.priority.setValue(this.priority.getItems().get(0));
-    	
-    	this.tasks.getSelectionModel().selectedItemProperty().addListener(
-    		(observable, oldTask, selectedTask) -> {
-    			if (selectedTask != null) {
-    				this.subTasks.getItems().setAll(selectedTask.getSubTasks());
-    				this.selectedPriority.setText(selectedTask.getPriority().toString());
-    				this.selectedDescription.setText(selectedTask.getDescription());
-    			} else {
-    				this.subTasks.getItems().clear();
-    				this.selectedPriority.setText("");
-    				this.selectedDescription.setText("");
-    			}
-    		}
-    	);
-    	
-    	this.subTasks.getSelectionModel().selectedItemProperty().addListener(
-        	(observable, oldTask, selectedSubTask) -> {
-        		if (selectedSubTask != null) {
-        			Alert alert = new Alert(AlertType.INFORMATION);
-        			alert.setContentText(selectedSubTask.getName() + "\n" + selectedSubTask.getPriority().toString() + "\n" + selectedSubTask.getDescription());
-        			alert.showAndWait();
-        		}
-        	}
-        );
     }
 }

@@ -1,0 +1,105 @@
+commit 277277321f70a9cdf2673f4e73a13828adf6e7de (HEAD -> dev, origin/dev, origin/HEAD)
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Oct 30 05:31:54 2025 -0400
+
+    Connect UI to Business Logic for Adding Task
+
+    1) Alert window functionality within initialize()
+    2) To show pop up window displaying sub task information whenever it is selected
+    3) Added new event listener within initialize() and wrote a new alert
+
+commit 60c837ea7fb9f0c45e4bef336c0ddbd11cfaaf55
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Oct 30 05:08:49 2025 -0400
+
+    UI for Adding Tasks
+
+    1) New priority and description field for subtasks
+    2) To display subtask information
+    3) Duplicated previous priorty & description boxes and moved them under subtask ListView
+
+commit 6247359340ad44eaf74ce83e40801eadea6357af
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Oct 30 04:55:00 2025 -0400
+
+    Displaying Subtasks
+
+    1) initializw() supports displaying subtasks when a task is selected
+    2) To display subtasks
+    3) A new event listener is added to initialize when a task gets selected to display the associated subtask
+
+commit 121130fb4bb06d28a3df4a5f2f54c4358c49df99
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Oct 30 04:34:37 2025 -0400
+
+    Connect UI to Business Logic for SubTasks
+
+    1) addSubTask method
+    2) To support adding sub tasks within tasks
+    3) Added new method that adds sub task for the current task selected
+
+commit 8df9bd975eca373a8df8ccfc96f3e3c7c8ac13eb
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Oct 30 04:10:27 2025 -0400
+
+    SubTask Logic
+
+    1) Task & ContainerTask are updated and created respectively
+    2) To support subtask functionality
+    3) Updated Task class to handle a couple of new methods and created the ContainerTask class
+
+commit e159d8511b2a0fdc7e26c2928d8b170993df2bb4
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Oct 30 03:48:32 2025 -0400
+
+    UI for SubTasks
+
+    1) UI has elements for supporting sub tasks
+    2) To implement a selected task having a set of subtasks
+    3) Added a button and listview in SceneBuilder
+
+commit db806901b9b5bcbdd74ec13be518650033448308
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Oct 30 03:33:25 2025 -0400
+
+    Sorting Based on Name UI
+
+    1) UI supports the two new comparators for selecting from the dropdown and sorting the list
+    2) To sort the ListView based on name
+    3) Added two new lines in the initialize method in MainWindow to add the two comparators to the dropdown
+
+commit 48fc7b73d48ae83e0c28f83c75171fc7209690b5
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Oct 30 03:28:04 2025 -0400
+
+    Sorting Based on Name
+
+    1) Two new comparators that sort based on name
+    2) To add two new sorting options to the dropdown
+    3) Created two new comparators based on the former Ascending & Desending comparators and changed their methods to sort by name
+
+commit 15619b0f3edbba91ee9e4d7c007f8bc353fb1bca
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Oct 23 12:40:18 2025 -0400
+
+    Re-sorting Tasks
+
+    1) New lines for resorting tasks whenever the task list if updated
+    2) To resort tasks whenever task list is updated
+    3) Added line to call sortTasks method in addTask, removeTask, and updateDescription
+
+commit 3a13d1f0299504be2fd41b74027243faa08797fe
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Oct 23 12:11:59 2025 -0400
+
+cription
+
+commit 3a13d1f0299504be2fd41b74027243faa08797fe
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Oct 23 12:11:59 2025 -0400
+
+    Added Project 2 Files
+
+    1) New Task Tracker project
+    2) To start Project 2
+    3) Moved new Task Tracker folder over to code folder
