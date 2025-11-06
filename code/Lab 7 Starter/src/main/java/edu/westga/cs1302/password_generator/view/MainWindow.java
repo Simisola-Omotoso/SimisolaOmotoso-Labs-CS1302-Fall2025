@@ -1,14 +1,8 @@
 package edu.westga.cs1302.password_generator.view;
 
-import java.util.Random;
-
 import javafx.util.converter.IntegerStringConverter;
-import edu.westga.cs1302.password_generator.model.PasswordGenerator;
 import edu.westga.cs1302.password_generator.viewmodel.PasswordGeneratorViewModel;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -39,6 +33,6 @@ public class MainWindow {
         this.viewModel.oneUppercaseLetterProperty().bindBidirectional(this.mustIncludeUpperCaseLetters.selectedProperty());
         this.viewModel.oneLowercaseLetterProperty().bindBidirectional(this.mustIncludeLowerCaseLetters.selectedProperty());
 
-        this.output.textProperty().bind(this.viewModel.generatedPasswordProperty());;
+        this.output.textProperty().bind(this.viewModel.generatedPasswordProperty());
     }
 }
