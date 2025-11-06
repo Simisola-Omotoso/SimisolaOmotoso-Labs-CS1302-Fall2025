@@ -1,0 +1,39 @@
+commit d7e088629a0f568a89ee49b2639bd7230f5dc07d (HEAD -> dev, origin/dev, origin/HEAD)
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Nov 6 07:56:55 2025 -0500
+
+    Added Test Cases
+
+    1) New test cases for generatePassword in ViewModel
+    2) To test if generatePassword is working properly
+    3) Created 12 cases for each property
+
+commit d817c614dba09ae1adbc8a58da233d66d7d67eb8
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Nov 6 07:22:31 2025 -0500
+
+    Bind View to ViewModel
+
+    1) New bindings inside View
+    2) To connect ViewModel to View
+    3) Added PasswordGeneratorViewModel as a field, initialized properties, added bidirectional bindings for each property
+
+commit e789aaeefd363e237d049622ff5589ec900f9b9d
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Nov 6 07:00:51 2025 -0500
+
+    Implement ViewModel
+
+    1) New ViewModel named PasswordGeneratorViewModel
+    2) To connect model & view together
+    3) Created new class, added properties, set properties, and moved generatePassword method to ViewModel and recreated it
+
+commit 0897dfb2898b4056f597b98f27d0f37367d90bc9
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Mon Nov 3 12:02:28 2025 -0500
+
+    Lab 7 Files
+
+    1) Lab 7 files
+    2) To start lab 7
+    3) Moved files over to code folder
