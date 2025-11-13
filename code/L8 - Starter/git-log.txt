@@ -1,0 +1,29 @@
+commit 1c107bc388f1dd735abc89320c0732a6f322b418 (HEAD -> dev, origin/dev, origin/HEAD)
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Nov 13 06:45:50 2025 -0500
+
+    Store List of Passwords
+
+    1) ListView stores list of passwords generated
+    2) To display running list of all passwords that have been generated
+    3) Updated GUI to change from TextArea to ListView, added a list to Viewmodel, and binded it inside MainWindow
+
+commit 6f3c4eabdbdee5bf4ea8e60a2578b556ba0724a4
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Nov 13 05:32:31 2025 -0500
+
+    Implement Input Validation
+
+    1) Series of input validation change listeners in initialize()
+    2) To check if inputs are correct in program
+    3) Implemented change listeners and checked input inside terminal in initialize()
+
+commit ad6cdfd83c80340d193c8d97af78dacad73d0bb3
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Nov 6 12:08:41 2025 -0500
+
+    Added Lab 8
+
+    1) Lab 8 Files
+    2) To start Lab 8
+    3) Moved Lab 8 files to code folder

@@ -40,5 +40,62 @@ class TestGeneratePassword {
 		assertTrue(vm.getPassword().getValue().length() >= 2, "checking the password property has an appropriate number of characters");
 		assertEquals("", vm.getErrorText().getValue(), "checking the error text property");
 	}
+	
+	@Test
+	void testOneItemInOutput() {
+		ViewModel vm = new ViewModel();
+		vm.getMinimumLength().setValue("10");
+		
+		vm.generatePassword();
+		
+		assertEquals(1, vm.getOutput().size());
+	}
+	
+	@Test
+	void testOneItemInOutputInvalid() {
+		ViewModel vm = new ViewModel();
+		vm.getMinimumLength().setValue("10");
+		
+		assertNotEquals(1, vm.getOutput().size());
+	}
+	
+	@Test
+	void testNoItemsInOutput() {
+		ViewModel vm = new ViewModel();
+		vm.getMinimumLength().setValue("10");
+		
+		assertEquals(0, vm.getOutput().size());
+	}
+	
+	@Test
+	void testThreeItemsInOutput() {
+		ViewModel vm = new ViewModel();
+		vm.getMinimumLength().setValue("10");
+		
+		vm.generatePassword();
+		vm.generatePassword();
+		vm.generatePassword();
+		
+		assertEquals(3, vm.getOutput().size());
+	}
+	
+	@Test
+	void testTenItemsInOutput() {
+		ViewModel vm = new ViewModel();
+		vm.getMinimumLength().setValue("10");
+		
+		vm.generatePassword();
+		vm.generatePassword();
+		vm.generatePassword();
+		vm.generatePassword();
+		vm.generatePassword();
+		vm.generatePassword();
+		vm.generatePassword();
+		vm.generatePassword();
+		vm.generatePassword();
+		vm.generatePassword();
+		
+		assertEquals(10, vm.getOutput().size());
+	}
 
 }
