@@ -122,5 +122,9 @@ public class ViewModel {
     	
     	this.passwordHistory.add(password);
     }
+	
+	public boolean checkForInvalidMinimumLengthText(String newValue) {
+		return !newValue.matches("\\d+") || Integer.parseInt(newValue) == 0;
+	}
 
 }

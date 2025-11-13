@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -26,6 +27,9 @@ public class MainWindow {
     @FXML private Label minLengthErrorText;
     @FXML private Button generatePasswordButton;
     @FXML private ListView<String> passwordHistory;
+    @FXML private MenuItem fileSave;
+    @FXML private MenuItem fileAbout;
+    @FXML private MenuItem fileClose;
     
     private ViewModel vm;
     
@@ -42,13 +46,13 @@ public class MainWindow {
     	this.passwordHistory.setItems(this.vm.getPasswordHistory());
     	
     	this.minimumLength.textProperty().addListener((observable, newValue, oldValue) -> {
-    		this.minLengthErrorText.setVisible(!newValue.matches("\\d+") || Integer.parseInt(newValue) == 0);
+    		this.minLengthErrorText.setVisible(this.vm.checkForInvalidMinimumLengthText(newValue));
     	});
     	
     	this.generatePasswordButton.setOnAction(
-    			(event) -> { 
-    				this.vm.generatePassword();
-    			} 
+			(event) -> { 
+				this.vm.generatePassword();
+			} 
     	);
     }
 }
