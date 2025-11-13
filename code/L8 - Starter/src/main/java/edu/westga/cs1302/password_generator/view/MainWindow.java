@@ -38,9 +38,49 @@ public class MainWindow {
     	this.errorTextLabel.textProperty().bind(this.vm.getErrorText());
     	
     	this.generatePasswordButton.setOnAction(
-    			(event) -> { 
-    				this.vm.generatePassword();
-    			} 
+			(event) -> { 
+				this.vm.generatePassword();
+			} 
+    	);
+    	
+    	this.mustIncludeDigits.selectedProperty().addListener(
+    		(observable, oldValue, newValue) -> {
+    			if (newValue) {
+    				System.out.println("Checked");
+    			} else {
+    				System.out.println("Not Checked");
+    			}
+    		}
+    	);
+    	
+    	this.mustIncludeLowerCaseLetters.selectedProperty().addListener(
+    		(observable, oldValue, newValue) -> {
+    			if (newValue) {
+    				System.out.println("Checked");
+    			} else {
+    				System.out.println("Not Checked");
+    			}
+    		}
+    	);
+    	
+    	this.mustIncludeUpperCaseLetters.selectedProperty().addListener(
+    		(observable, oldValue, newValue) -> {
+    			if (newValue) {
+    				System.out.println("Checked");
+    			} else {
+    				System.out.println("Not Checked");
+    			}
+    		}
+    	);
+    	
+    	this.minimumLength.textProperty().addListener(
+    		(observable, oldValue, newValue) -> {
+    			if (newValue.matches("\\d*")) {
+    				System.out.println("Valid input");
+    			} else {
+    				System.out.println("Minimum Length must only contain numbers.");
+    			}
+    		}
     	);
     }
 }
