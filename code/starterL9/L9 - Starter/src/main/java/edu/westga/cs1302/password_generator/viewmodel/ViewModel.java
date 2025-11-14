@@ -1,8 +1,12 @@
 package edu.westga.cs1302.password_generator.viewmodel;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
+import edu.westga.cs1302.password_generator.Main;
 import edu.westga.cs1302.password_generator.model.PasswordGenerator;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ListProperty;
@@ -11,6 +15,9 @@ import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
+import javafx.stage.Window;
 
 /** Manages utilizing the model and makes properties available to bind the UI elements.
  * 
@@ -125,6 +132,24 @@ public class ViewModel {
 	
 	public boolean checkForInvalidMinimumLengthText(String newValue) {
 		return !newValue.matches("\\d+") || Integer.parseInt(newValue) == 0;
+	}
+	
+	public void savePasswords(Window window) {
+		FileChooser chooser = new FileChooser();
+		chooser.setTitle("Save Passwords?");
+		chooser.getExtensionFilters().addAll(
+			new ExtensionFilter("Text Files", "*.txt"),
+			new ExtensionFilter("All Files", "*.*")
+		);
+
+		File file = chooser.showSaveDialog(window);
+		try (FileWriter writer = new FileWriter(file)) {
+			for (String password : this.passwordHistory) {
+				writer.write(password + "\n");
+			}
+		} catch (IOException error) {
+			System.out.println(error);
+		}
 	}
 
 }
