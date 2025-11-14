@@ -18,6 +18,8 @@ import javafx.collections.FXCollections;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Window;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 /** Manages utilizing the model and makes properties available to bind the UI elements.
  * 
@@ -150,6 +152,13 @@ public class ViewModel {
 		} catch (IOException error) {
 			System.out.println(error);
 		}
+	}
+	
+	public void displayWindow() {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setHeaderText("Author: Simisola Omotoso");
+		alert.setContentText("This program generates passwords and lists each one generated.");
+		alert.showAndWait();
 	}
 
 }

@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.stage.Window;
 
 /** Codebehind for the MainWindow of the Application.
  * 
@@ -29,6 +30,7 @@ public class MainWindow {
     @FXML private MenuItem fileClose;
     
     private ViewModel vm;
+    private Window window;
     
     @FXML
     void initialize() {
@@ -52,6 +54,17 @@ public class MainWindow {
 			} 
     	);
     	
+    	this.fileSave.setOnAction(
+    		(event) -> {
+    			this.vm.savePasswords(this.window);
+    		}
+    	);
+    	
+    	this.fileAbout.setOnAction(
+    		(event) -> {
+    			this.vm.displayWindow();
+    		}
+    	);
     	
     }
 }
