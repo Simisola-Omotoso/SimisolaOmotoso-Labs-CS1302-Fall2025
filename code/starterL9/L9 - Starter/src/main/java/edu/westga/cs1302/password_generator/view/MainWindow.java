@@ -9,6 +9,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.stage.Window;
+import javafx.scene.Node;
 
 /** Codebehind for the MainWindow of the Application.
  * 
@@ -63,6 +64,12 @@ public class MainWindow {
     	this.fileAbout.setOnAction(
     		(event) -> {
     			this.vm.displayWindow();
+    		}
+    	);
+    	
+    	this.fileClose.setOnAction(
+    		(event) -> {
+    			((Node) (this.errorTextLabel)).getScene().getWindow().hide();
     		}
     	);
     	
