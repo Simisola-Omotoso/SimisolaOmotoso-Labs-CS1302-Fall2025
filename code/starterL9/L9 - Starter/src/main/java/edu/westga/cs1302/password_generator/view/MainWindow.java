@@ -47,7 +47,7 @@ public class MainWindow {
     	
     	this.minimumLength.textProperty().addListener((observable, newValue, oldValue) -> {
     		this.minLengthErrorText.setVisible(this.vm.checkForInvalidMinimumLengthText(newValue));
-    		if (!this.vm.checkForInvalidMinimumLengthText(newValue)) {
+    		if (this.vm.checkForInvalidMinimumLengthText(newValue)) {
     			this.generatePasswordButton.setDisable(true);
     		} else {
     			this.generatePasswordButton.setDisable(false);

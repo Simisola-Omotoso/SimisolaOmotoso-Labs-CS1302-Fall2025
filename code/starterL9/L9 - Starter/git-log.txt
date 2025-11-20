@@ -1,0 +1,63 @@
+commit ff6c00414e128c7dcc7e84b6b63c4823b282b7d7 (HEAD -> dev, origin/dev, origin/HEAD)
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Sun Nov 16 11:53:37 2025 -0500
+
+    Enable/Disable Generate Password
+
+    1) Generate password button now disables whenever an invalid number is typed in the minimum length text field
+    2) To not allow the user to click on the button and generate errors
+    3) Updated this.minimumLength.textProperty().addListener() to include an if statement that checks for whenever checkForInvalidMinimumLengthText() is false, the .setDisable method is set to true, and else, set to false
+
+commit 38387ba559832afd5dd11f9bab2bd4e74a7e1ffb
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Fri Nov 14 12:14:44 2025 -0500
+
+    Exit Application
+
+    1) setOnAction for closing application
+    2) To exit application
+    3) Added setOnAction in MainWindow for fileClose and added a single line for closing the application
+
+commit f2d9e4492e6bd065998de8e90ba3cd2d6a74aeb2
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Fri Nov 14 12:10:27 2025 -0500
+
+    Display Pop Up Window
+
+    1) displayWindow method
+    2) To describe purpose of project and list author
+    3) Used Alert to create the window, set header, set content, and added method to wait for user to close the window
+
+commit 8dd7f1c4bad24c3a3ea17b170b0bc6bb657e01d6
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Fri Nov 14 11:54:17 2025 -0500
+
+    FileChooser Dialog Method
+
+    1) savePasswords method in ViewModel
+    2) To allow user to specify txt file and write current set of passwords in the file
+    3) Created savePasswords method with a Window as a parameter, included FileChooser, File, FileWriter, and try/catch to write each password per line
+
+commit b908c61969702f7647f786075f5496ae4c15f5b5
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Nov 13 12:23:42 2025 -0500
+
+    Add Menu Bar
+
+    1) Menu bar with File menu and menu items Save, About, Close
+    2) To display options to manipulate the program
+    3) Added UI components to SceneBuilder and added their fields in MainWindow
+
+    1) Menu bar with File menu and menu items Save, About, Close
+    2) To display options to manipulate the program
+    3) Added UI components to SceneBuilder and added their fields in MainWindow
+
+commit 6611a4c0cfb534050e0b8b44fee72c099dedbaf2
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Nov 13 12:03:43 2025 -0500
+
+    Lab 9
+
+    1) Lab 9 files
+    2) To start lab 9
+    3) Moved files to code folder

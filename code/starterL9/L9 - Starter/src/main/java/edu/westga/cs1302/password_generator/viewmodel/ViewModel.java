@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
-import edu.westga.cs1302.password_generator.Main;
 import edu.westga.cs1302.password_generator.model.PasswordGenerator;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ListProperty;
@@ -132,9 +131,21 @@ public class ViewModel {
     	this.passwordHistory.add(password);
     }
 	
+	/**
+	 * Checks for invalid input inside minimum length field
+	 * 
+	 * @param newValue value input in text field
+	 * @return false
+	 */
 	public boolean checkForInvalidMinimumLengthText(String newValue) {
 		return !newValue.matches("\\d+") || Integer.parseInt(newValue) == 0;
 	}
+	
+	/**
+	 * Saves passwords using FileChooser
+	 * 
+	 * @param window new window pulling up files
+	 */
 	
 	public void savePasswords(Window window) {
 		FileChooser chooser = new FileChooser();
@@ -153,6 +164,10 @@ public class ViewModel {
 			System.out.println(error);
 		}
 	}
+	
+	/**
+	 * Displays information window
+	 */
 	
 	public void displayWindow() {
 		Alert alert = new Alert(AlertType.INFORMATION);
