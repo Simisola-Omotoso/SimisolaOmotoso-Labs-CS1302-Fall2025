@@ -37,7 +37,7 @@ public class MainWindowViewModel {
 		this.phoneNumber = new SimpleStringProperty("");
 		this.searchCriteria = new SimpleStringProperty("");
 		this.contacts = new SimpleListProperty<Contact>(FXCollections.observableList(new ArrayList<Contact>()));
-		this.phoneNumber = new HashMap<String, Contact>();
+		this.phoneNumberMap = new HashMap<String, Contact>();
 		this.nameMap = new HashMap<String, Contact>();
 	}
 	
@@ -94,6 +94,11 @@ public class MainWindowViewModel {
 	 */
 	public void addContact() throws IllegalArgumentException {
 		Contact contact = new Contact(this.name.get(), this.phoneNumber.get());
+		for (Contact newContact : this.contacts) {
+			if (newContact.getName().equals(contact.getName()) || newContact.getPhoneNumber().equals(contact.getPhoneNumber())) {
+				throw new IllegalArgumentException("Duplicate contact");
+			}
+		}
 		this.contacts.add(contact);
 		this.phoneNumberMap.put(contact.getPhoneNumber(), contact);
 		this.phoneNumberMap.put(contact.getName(), contact);
@@ -122,12 +127,6 @@ public class MainWindowViewModel {
 				return contact.toString();
 			}
 		}
-		/*
-		for (Contact currContact : this.contacts.get()) {
-			if (currContact.getName().equals(this.searchCriteria.get()) || currContact.getPhoneNumber().equals(this.searchCriteria.get())) {
-				return currContact.toString();
-			}
-		}*/
 		return "No contact found.";
 	}
 	
