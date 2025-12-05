@@ -1,0 +1,22 @@
+commit 07050737036dc951536baa148f7fe72c07230137 (HEAD -> dev, origin/dev, origin/HEAD)
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Mon Dec 1 09:59:50 2025 -0500
+
+    Prevent Duplicate Contacts
+
+
+    Prevent Duplicate Contacts
+
+    1) For loop within addContact that loops through contacts
+    2) To search for duplicate contacts
+    3) Added for loop that loops through contact, and if both contacts have the same phone number or name, error message
+
+commit 26c5ea5d85cda080e85af25a96d065b2ad256eb6
+Author: Simisola E Omotoso <so00089@my.westga.edu>
+Date:   Thu Nov 20 12:09:55 2025 -0500
+
+    Lab 10 Files and Lookup Contact by System Name or Phone Number
+
+    1) Name and phone numbers are able to be looked up through search
+    2) To search for specific contacts by either name or phone number
+    3) Added two maps as fields, initialized them in Constructor, and put both maps inside addContact() and findContact()
