@@ -30,6 +30,7 @@ public class MainWindow {
     	this.addCollection.setOnAction((event) -> {
     		this.vm.addCollection();
     	});
+    	this.addCollection.disableProperty().bind(this.vm.getNameProperty().isEmpty());
     	this.collections.setItems(this.vm.getCollectionsProperty());
     	this.removeCollection.setOnAction((event) -> {
     		this.vm.removeCollection();
