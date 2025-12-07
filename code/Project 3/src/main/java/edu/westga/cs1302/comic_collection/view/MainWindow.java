@@ -18,8 +18,11 @@ import javafx.scene.layout.AnchorPane;
 public class MainWindow {
 	@FXML private TextField name;
     @FXML private Button addCollection;
+    @FXML private Button addComic;
     @FXML private ListView<Collection> collections;
+    //@FXML private ListView<Comic> comics;
     @FXML private Button removeCollection;
+    @FXML private Button removeComic;
     @FXML private AnchorPane guiPane;
     private CollectionViewModel vm;
     

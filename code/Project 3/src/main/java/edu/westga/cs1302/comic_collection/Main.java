@@ -8,6 +8,7 @@ import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 
 import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
 /**
@@ -21,6 +22,7 @@ public class Main extends Application {
 
 	private static final String WINDOW_TITLE = "Comic Collection";
 	private static final String MAIN_WINDOW_FXML = "/edu/westga/cs1302/comic_collection/view/MainWindow.fxml";
+	private static final String COMIC_WINDOW_FXML = "/edu/westga/cs1302/comic_collection/view/ComicWindow.fxml";
 
 	/** JavaFX Launch process
 	 * 
@@ -43,9 +45,18 @@ public class Main extends Application {
 	}
 
 	private Pane loadGui() throws IOException {
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource(MAIN_WINDOW_FXML));
-		return (Pane) loader.load();
+		FXMLLoader loader1 = new FXMLLoader();
+		FXMLLoader loader2 = new FXMLLoader();
+		
+		loader1.setLocation(getClass().getResource(MAIN_WINDOW_FXML));
+		loader2.setLocation(getClass().getResource(COMIC_WINDOW_FXML));
+		
+		Pane mainView = (Pane) loader1.load();
+		Pane comicView = (Pane) loader2.load();
+		
+		HBox box = new HBox(10);
+		box.getChildren().addAll(mainView, comicView);
+		return box;
 	}
 
 	/**
