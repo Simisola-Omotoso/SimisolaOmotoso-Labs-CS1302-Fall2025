@@ -20,7 +20,7 @@ import javafx.scene.layout.Pane;
 public class Main extends Application {
 
 	private static final String WINDOW_TITLE = "Comic Collection";
-	private static final String MAIN_WINDOW_FXML = "view/MainWindow.fxml";
+	private static final String MAIN_WINDOW_FXML = "/edu/westga/cs1302/comic_collection/view/MainWindow.fxml";
 
 	/** JavaFX Launch process
 	 * 

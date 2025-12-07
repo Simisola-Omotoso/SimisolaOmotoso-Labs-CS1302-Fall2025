@@ -1,5 +1,7 @@
 package edu.westga.cs1302.comic_collection.view;
 
+import edu.westga.cs1302.comic_collection.model.Collection;
+import edu.westga.cs1302.comic_collection.viewmodel.CollectionViewModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -14,15 +16,25 @@ import javafx.scene.layout.AnchorPane;
  * @version Fall 2025
  */
 public class MainWindow {
+	@FXML private TextField name;
     @FXML private Button addCollection;
-    @FXML private ListView collections;
+    @FXML private ListView<Collection> collections;
     @FXML private Button removeCollection;
     @FXML private AnchorPane guiPane;
-    @FXML private TextField name;
+    private CollectionViewModel vm;
     
     @FXML
     void initialize() {
-        
+    	this.vm = new CollectionViewModel();
+    	this.name.textProperty().bindBidirectional(this.vm.getNameProperty());
+    	this.addCollection.setOnAction((event) -> {
+    		this.vm.addCollection();
+    	});
+    	this.collections.setItems(this.vm.getCollectionsProperty());
+    	this.removeCollection.setOnAction((event) -> {
+    		this.vm.removeCollection();
+    	});
+    	this.vm.getSelectedCollectionProperty().bind(this.collections.getSelectionModel().selectedItemProperty());
     }
 }
 

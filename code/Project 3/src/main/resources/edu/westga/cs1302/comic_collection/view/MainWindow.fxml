@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="guiPane" minHeight="100.0" minWidth="100.0" prefHeight="421.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.contact_manager.view.MainWindow">
+<AnchorPane fx:id="guiPane" minHeight="100.0" minWidth="100.0" prefHeight="421.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.comic_collection.view.MainWindow">
    <children>
       <TextField fx:id="name" layoutX="160.0" layoutY="25.0" prefHeight="26.0" prefWidth="158.0" />
       <Button fx:id="addCollection" layoutX="196.0" layoutY="85.0" mnemonicParsing="false" text="Add Collection" />
@@ -19,6 +19,6 @@
               </items>
             </ContextMenu>
          </contextMenu></ListView>
-      <Button fx:id="removeCollection" layoutX="187.0" layoutY="381.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="Find Contact" />
+      <Button fx:id="removeCollection" layoutX="187.0" layoutY="381.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="104.0" text="Remove Collection" />
    </children>
 </AnchorPane>

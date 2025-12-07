@@ -15,35 +15,35 @@ import javafx.collections.FXCollections;
 
 public class CollectionViewModel {
 
-	private StringProperty name;
-	private ListProperty<Collection> collections;
-	private ObjectProperty<Collection> selectedCollection;
+	private StringProperty nameProperty;
+	private ListProperty<Collection> collectionsProperty;
+	private ObjectProperty<Collection> selectedCollectionProperty;
 	
 	public CollectionViewModel() {
-		this.name = new SimpleStringProperty("");
-		this.collections = new SimpleListProperty<Collection>(FXCollections.observableArrayList(new ArrayList<Collection>()));
-		this.selectedCollection = new SimpleObjectProperty<Collection>();
+		this.nameProperty = new SimpleStringProperty("");
+		this.collectionsProperty = new SimpleListProperty<Collection>(FXCollections.observableArrayList(new ArrayList<Collection>()));
+		this.selectedCollectionProperty = new SimpleObjectProperty<Collection>();
 	}
 	
-	public StringProperty getName() {
-		return name;
+	public StringProperty getNameProperty() {
+		return this.nameProperty;
 	}
 	
-	public ListProperty<Collection> getCollections() {
-		return collections;
+	public ListProperty<Collection> getCollectionsProperty() {
+		return this.collectionsProperty;
 	}
 	
-	public ObjectProperty<Collection> getAddCollection() {
-		return selectedCollection;
+	public ObjectProperty<Collection> getSelectedCollectionProperty() {
+		return this.selectedCollectionProperty;
 	}
 	
 	public void addCollection() {
 		Collection collection = new Collection("Comics", 3, "Action");
-		this.collections.add(collection);
+		this.collectionsProperty.add(collection);
 	}
 	
 	public void removeCollection() {
-		Collection collection = this.selectedCollection.get();
-		this.collections.remove(collection);
+		Collection collection = this.selectedCollectionProperty.get();
+		this.collectionsProperty.remove(collection);
 	}
 }
