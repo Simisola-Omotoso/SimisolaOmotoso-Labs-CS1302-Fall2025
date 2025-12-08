@@ -1,5 +1,7 @@
 package edu.westga.cs1302.comic_collection.model;
 
+import java.util.ArrayList;
+
 public class Collection {
 
 	private String name;
@@ -8,10 +10,13 @@ public class Collection {
 	
 	private String genre;
 	
+	private ArrayList<Comic> comics;
+	
 	public Collection(String name, int numOfComics, String genre) {
 		this.name = name;
 		this.numOfComics = numOfComics;
 		this.genre = genre;
+		this.comics = new ArrayList<Comic>();
 	}
 	
 	public String getName() {
@@ -24,5 +29,9 @@ public class Collection {
 	
 	public String getGenre() {
 		return genre;
+	}
+	
+	public ArrayList<Comic> getComics() {
+		return comics;
 	}
 }
