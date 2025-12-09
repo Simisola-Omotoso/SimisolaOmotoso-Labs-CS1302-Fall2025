@@ -32,6 +32,8 @@ public class MainWindow {
     @FXML private ListView<Comic> comics;
     @FXML private Button removeCollection;
     @FXML private Button removeComic;
+    @FXML private TextField searchTitle;
+    @FXML private TextField searchIssueNumber;
     @FXML private AnchorPane guiPane;
     private CollectionViewModel vm;
     private ComicViewModel comicVM;
