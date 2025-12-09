@@ -2,6 +2,9 @@ package edu.westga.cs1302.comic_collection.model;
 
 import java.util.ArrayList;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class Collection {
 
 	private String name;
@@ -10,13 +13,13 @@ public class Collection {
 	
 	private String genre;
 	
-	private ArrayList<Comic> comics;
+	private ObservableList<Comic> comics;
 	
 	public Collection(String name, int numOfComics, String genre) {
 		this.name = name;
 		this.numOfComics = numOfComics;
 		this.genre = genre;
-		this.comics = new ArrayList<Comic>();
+		this.comics = FXCollections.observableArrayList();
 	}
 	
 	public String getName() {
@@ -31,7 +34,7 @@ public class Collection {
 		return genre;
 	}
 	
-	public ArrayList<Comic> getComics() {
+	public ObservableList<Comic> getComics() {
 		return comics;
 	}
 }

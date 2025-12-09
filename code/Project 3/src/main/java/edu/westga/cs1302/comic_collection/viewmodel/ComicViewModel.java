@@ -23,12 +23,12 @@ public class ComicViewModel {
 	
 	private CollectionViewModel collectionViewModel;
 	
-	public ComicViewModel() {
+	public ComicViewModel(CollectionViewModel collectionViewModel) {
 		this.comicNameProperty = new SimpleStringProperty("");
 		this.issueNumberProperty = new SimpleStringProperty("");
 		this.comicListProperty = new SimpleListProperty<Comic>(FXCollections.observableArrayList(new ArrayList<Comic>()));
 		this.selectedComicProperty = new SimpleObjectProperty<Comic>();
-		this.collectionViewModel = Objects.requireNonNull(this.collectionViewModel);
+		this.collectionViewModel = Objects.requireNonNull(collectionViewModel);
 	}
 	
 	public StringProperty getComicNameProperty() {
