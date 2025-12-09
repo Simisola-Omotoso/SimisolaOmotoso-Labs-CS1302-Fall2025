@@ -27,6 +27,8 @@ public class ComicWindow {
 	void initialize() {
 		this.comicName.textProperty().bindBidirectional(this.comicVM.getComicNameProperty());
 		this.issueNumber.textProperty().bindBidirectional(this.comicVM.getIssueNumberProperty());
+		this.confirmComic.disableProperty().bind(this.comicVM.getComicNameProperty().isEmpty());
+		this.confirmComic.disableProperty().bind(this.comicVM.getIssueNumberProperty().isEmpty());
 		this.confirmComic.setOnAction((event) -> {
 			this.comicVM.addComic();
 			Node source = (Node) event.getSource();
