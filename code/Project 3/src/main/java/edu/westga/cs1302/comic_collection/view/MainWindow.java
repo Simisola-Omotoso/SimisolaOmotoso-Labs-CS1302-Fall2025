@@ -6,6 +6,7 @@ import edu.westga.cs1302.comic_collection.model.Collection;
 import edu.westga.cs1302.comic_collection.model.Comic;
 import edu.westga.cs1302.comic_collection.viewmodel.CollectionViewModel;
 import edu.westga.cs1302.comic_collection.viewmodel.ComicViewModel;
+import edu.westga.cs1302.comic_collection.viewmodel.FindingComicViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -34,14 +35,17 @@ public class MainWindow {
     @FXML private Button removeComic;
     @FXML private TextField searchTitle;
     @FXML private TextField searchIssueNumber;
+    @FXML private Button searchButton;
     @FXML private AnchorPane guiPane;
     private CollectionViewModel vm;
     private ComicViewModel comicVM;
+    private FindingComicViewModel findingVM;
     
     @FXML
     void initialize() {
     	this.vm = new CollectionViewModel();
     	this.comicVM = new ComicViewModel(this.vm);
+    	this.findingVM = new FindingComicViewModel();
     	this.name.textProperty().bindBidirectional(this.vm.getNameProperty());
     	this.addCollection.setOnAction((event) -> {
     		this.vm.addCollection();
@@ -75,6 +79,16 @@ public class MainWindow {
     		} catch (IOException e) {
     			e.printStackTrace();
     		}	
+    	});
+    	this.searchTitle.textProperty().bindBidirectional(this.findingVM.getFindingComicNameProperty());
+    	this.searchIssueNumber.textProperty().bindBidirectional(this.findingVM.getFindingComicIssueNumberProperty());
+    	this.searchButton.disableProperty().bind(this.searchTitle.textProperty().isEmpty().and(this.searchIssueNumber.textProperty().isEmpty()));
+    	this.searchButton.setOnAction((event) -> {
+    		Comic comic = this.findingVM.findComic();
+    		Alert alert = new Alert(AlertType.INFORMATION);
+    		alert.setTitle("Comic");
+    		alert.setContentText(comic.getName() + " " + comic.getIssueNumber());
+    		alert.showAndWait();
     	});
     }
 }

@@ -4,25 +4,19 @@ public class Comic {
 
 	private String name;
 	
-	private int issueNumber;
+	private String issueNumber;
 	
-	private String genre;
 	
-	public Comic(String name, int issueNumber, String genre) {
+	public Comic(String name, String issueNumber) {
 		this.name = name;
 		this.issueNumber = issueNumber;
-		this.genre = genre;
 	}
 	
 	public String getName() {
 		return name;
 	}
 	
-	public int getIssueNumber() {
+	public String getIssueNumber() {
 		return issueNumber;
-	}
-	
-	public String getGenre() {
-		return genre;
 	}
 }

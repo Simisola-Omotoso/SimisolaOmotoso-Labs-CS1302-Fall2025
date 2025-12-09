@@ -33,9 +33,10 @@
       <Button fx:id="addComic" layoutX="319.0" layoutY="143.0" mnemonicParsing="false" text="Add Comic" />
       <Button fx:id="removeComic" layoutX="310.0" layoutY="375.0" mnemonicParsing="false" text="Remove Comic" />
       <Label layoutX="98.0" layoutY="50.0" text="Collection" />
-      <TextField fx:id="searchTitle" layoutX="282.0" layoutY="38.0" />
-      <TextField fx:id="searchIssueNumber" layoutX="282.0" layoutY="105.0" />
-      <Label layoutX="328.0" layoutY="21.0" text="Search Title" />
-      <Label layoutX="303.0" layoutY="88.0" text="Search Issue Number" />
+      <TextField fx:id="searchTitle" layoutX="282.0" layoutY="23.0" />
+      <TextField fx:id="searchIssueNumber" layoutX="282.0" layoutY="71.0" />
+      <Label layoutX="329.0" layoutY="6.0" text="Search Title" />
+      <Label layoutX="302.0" layoutY="50.0" text="Search Issue Number" />
+      <Button fx:id="searchButton" layoutX="331.0" layoutY="96.0" mnemonicParsing="false" text="Search" />
    </children>
 </AnchorPane>

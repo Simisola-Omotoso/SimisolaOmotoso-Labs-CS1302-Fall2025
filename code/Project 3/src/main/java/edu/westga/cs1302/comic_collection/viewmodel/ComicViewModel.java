@@ -48,7 +48,7 @@ public class ComicViewModel {
 	}
 	
 	public void addComic() {
-		Comic comic = new Comic("Batman Returns", 1, "Superhero");
+		Comic comic = new Comic("Batman Returns", "1");
 		Collection collection = this.collectionViewModel.getSelectedCollectionProperty().get();
 		collection.getComics().add(comic);
 	}

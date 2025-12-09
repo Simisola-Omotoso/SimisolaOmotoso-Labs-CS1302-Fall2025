@@ -17,13 +17,15 @@ public class FindingComicViewModel {
 	private StringProperty findingComicNameProperty;
 	private StringProperty findingComicIssueNumberProperty;
 	private ListProperty<Comic> findingComics;
-	private ObservableList<Comic> source;
+	private Map<String, Comic> nameMap = new HashMap<>();
+	private Map<String, Comic> issueMap = new HashMap<>();
 	
 	public FindingComicViewModel() {
 		this.findingComicNameProperty = new SimpleStringProperty("");
 		this.findingComicIssueNumberProperty = new SimpleStringProperty("");
 		this.findingComics = new SimpleListProperty<Comic>(FXCollections.observableArrayList(new ArrayList<Comic>()));
-		this.source = source;
+		this.nameMap = nameMap;
+		this.issueMap = issueMap;
 	}
 	
 	public StringProperty getFindingComicNameProperty() {
@@ -38,20 +40,29 @@ public class FindingComicViewModel {
 		return this.findingComics;
 	}
 	
-	public void findComicByTitle() {
-		String name = this.findingComicNameProperty.get();
-		String issue = this.findingComicIssueNumberProperty.get();
-		Map<String, Comic> map = new HashMap<>();
-		for (Comic comic : this.source) {
-			String key = comic.getName().toLowerCase() + "-" + comic.getIssueNumber();
-			map.put(key, comic);
+	public void put() {
+		String key1 = new String();
+		String key2 = new String();
+		Comic comic = new Comic(key1, key2);
+		this.nameMap.put(key1, comic);
+		this.issueMap.put(key2, comic);
+	}
+	
+	public Comic findComic() {
+		String titleValue = new String();
+		String issueValue = new String();
+		if (titleValue != null && !titleValue.isEmpty()) {
+			Comic comic = this.nameMap.get(titleValue);
+			if (comic != null) {
+				return comic;
+			}
 		}
-		
-		String searchKey = name.toLowerCase() + "-" + issue;
-		Comic result = map.get(searchKey);
-		this.findingComics.clear();
-		if (result != null) {
-			this.findingComics.add(result);
+		if (issueValue != null && !issueValue.isEmpty()) {
+			Comic comic = this.nameMap.get(issueValue);
+			if (comic != null) {
+				return comic;
+			}
 		}
+		return null;
 	}
 }

@@ -7,11 +7,11 @@ public class FindComic {
 
 	private String name;
 	
-	private int issueNumber;
+	private String issueNumber;
 	
 	private ObservableList<Comic> comics;
 	
-	public FindComic(String name, int issueNumber) {
+	public FindComic(String name, String issueNumber) {
 		this.name = name;
 		this.issueNumber = issueNumber;
 		this.comics = FXCollections.observableArrayList();
@@ -21,7 +21,7 @@ public class FindComic {
 		return name;
 	}
 	
-	public int getIssueNumber() {
+	public String getIssueNumber() {
 		return issueNumber;
 	}
 	
@@ -38,9 +38,9 @@ public class FindComic {
 		return null;
 	}
 	
-	public Comic findComicByNumber(int newNumber) {
+	public Comic findComicByNumber(String newNumber) {
 		for (Comic comic : comics) {
-			if (comic.getIssueNumber() == newNumber) {
+			if (comic.getIssueNumber().equals(newNumber)) {
 				return comic;
 			}
 		}
